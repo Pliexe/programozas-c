@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int A[MAXELLEM], n, i;
+    int A[MAXELLEM], n, i, kereszet;
 
     // ----------------
     // Тömb deklarálása
@@ -27,7 +27,21 @@ int main(void)
         scanf("%d", &A[i]);
     }
 
-    // Tömb elemeinek ki írása
-    for (i = 0; i < n; i++)
-        printf("A tömb %d eleme %d.", i + 1, A[i]);
+    printf("Kérem a kereszet elemet: ");
+    scanf("%d", &kereszet);
+
+    i = 0;
+    while (i < n)
+    {
+        if (kereszet == A[i])
+        {
+            printf("\nA kereszet elem (%d), %d helyen van.", A[i], i + 1);
+            getch();
+            return 0;
+        }
+        else
+            i++;
+    }
+
+    printf("\nIlyen elem nincs a tömbben!");
 }
