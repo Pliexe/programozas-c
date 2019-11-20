@@ -26,16 +26,16 @@ int main(void)
         printf("Kerem a tömb %d elemét: ", i + 1);
         scanf("%d", &A[i]);
     }
-    
-    temp = A[0]; // Lementi a tomb elso elemet
+
+    temp = A[0];
     i = 0;
-    while(i < n - 1)
+    while (i < n - 1) // Addig megy még nem jut el a tömb utolsó elöti eleméig
     {
-        A[i] = A[i+1];
+        A[i] = A[i + 1]; // A tömb elemet áthelyezi egy index-el visza pl ( A[0] = 4, A[1] = 6, A[2] = 5 => A[0] = 6, A[1] = 5, A[2] = 5)
         i++;
     }
     A[i] = temp;
-    
+
     // Tömb elemeinek ki írása
     for (i = 0; i < n; i++)
         printf("\nA tömb %d eleme %d.", i + 1, A[i]);

@@ -26,26 +26,27 @@ int main(void)
         printf("Kerem a tömb %d elemét: ", i + 1);
         scanf("%d", &A[i]);
     }
-    
-    printf("Kerem a kidobas szant elemet: ");
+
+    printf("Kérem a kidobás szánt elemet: ");
     scanf("%d", &kidobni);
     i = 0;
-    while(i < n)
+    while (i < n)
     {
-        while(A[i] != kidobni) i++;
-        
+        while (A[i] != kidobni)
+            i++;
+
         if (i < n - 1)
         {
-            for (j=i+1; j < n; j++)
-                A[j-1] = A[j];
-            A[n-1] = 0;
+            for (j = i + 1; j < n; j++)
+                A[j - 1] = A[j];
+            A[n - 1] = 0;
             n--;
         }
         else
         {
-            if (i==n-1)
+            if (i == n - 1)
             {
-                A[n-1] = 0;
+                A[n - 1] = 0;
                 n--;
             }
         }
