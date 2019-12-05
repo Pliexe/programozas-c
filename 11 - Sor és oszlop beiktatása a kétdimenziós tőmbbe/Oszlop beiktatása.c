@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int A[MAXSOR][MAXOSZLOP], n, m, i, j, S;
+    int A[MAXSOR][MAXOSZLOP], n, m, i, j, oszlop;
 
     do
     {
@@ -29,19 +29,24 @@ int main(void)
             scanf("%d", &A[i][j]);
         }
 
+    if (m + 1 < MAXOSZLOP)
+    {
+        m++;
+        printf("Melyik oszlop után iktassa be az új oszlopot: ");
+        scanf("%d", &oszlop);
+        for (i = 0; i < n; i++)
+        {
+            for (j = m - 1; j > oszlop; j--)
+                A[i][j] = A[i][j - 1];
+            A[i][j] = 0;
+        }
+    }
+    else
+        printf("Nincs elég memória!");
+
     for (i = 0; i < n; i++)
         for (j = 0; j < m; j++)
             printf("\nA[%d][%d] = %d", i + 1, j + 1, A[i][j]);
-
-    for (i = 0; i < n; i++)
-    {
-        S = 0;
-        for (j = 0; j < m; j++)
-        {
-            S += A[i][j];
-            printf("\nA(z) %d sor ősszege %d", i, S);
-        }
-    }
 
     return 0;
 }

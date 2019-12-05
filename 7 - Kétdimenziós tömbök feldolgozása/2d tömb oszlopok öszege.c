@@ -2,7 +2,7 @@
 #define MAXSOR 10
 #define MAXOSZLOP 10
 
-int main()
+int main(void)
 {
     int A[MAXSOR][MAXOSZLOP], n, m, i, j, S;
 
